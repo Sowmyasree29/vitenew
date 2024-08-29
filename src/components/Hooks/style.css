@@ -1,0 +1,16 @@
+.btn{
+    height:100px;
+    width:250px;
+   background-color:red;
+    border-radius:10px;
+    border:1px solid black;
+  
+ 
+   
+
+}
+.grids{
+    display:grid;
+    gap:6px;
+    grid-template-columns: 1fr repeat(4,1fr);
+}

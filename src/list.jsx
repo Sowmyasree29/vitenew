@@ -2,11 +2,12 @@
 
 
 
-export default function List()
+export default function List(props)
 {
+   const{heading}=props
    return(
     <div>
-    <h1>version 1</h1>
+   <li>{heading}</li>
     
 
     </div>
