@@ -64,9 +64,9 @@ function App() {
   return (
     <div>
     <form>
-      <select style={{margin:"10px",width:"300px"}} onChange={onChangeHandler} value={getCountry} >
+      <select onChange={onChangeHandler} value={getCountry} >
         
-     
+        {/* <option value=" ">select country</option> */}
         {
           unique.map((ctr,index)=>
           (
@@ -78,7 +78,7 @@ function App() {
         }
       </select><br />
     
-           <select style={{margin:"10px",width:"300px"}} onChange={changeState} value={getstate} >
+           <select onChange={changeState} value={getstate} >
            <option value=" ">select state</option> 
 
              {
@@ -92,8 +92,8 @@ function App() {
           </select><br /> 
 
 
-          <select style={{margin:"10px",width:"300px"}} >
-          <option value=" ">select city</option>
+          <select >
+          {/* <option value=" ">select city</option> */}
 
 {
    city.map((each,index)=>
@@ -111,4 +111,3 @@ function App() {
 }
 
 export default App;
-

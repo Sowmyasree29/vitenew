@@ -9,6 +9,13 @@ function LoginForm()
     const usernameRef=useRef("")
     const passwordRef=useRef("")
     const[error,setError]=useState({usernameError:" ",passwordError:" "})
+    const[arrs,setArrs]=useState([])
+    
+   
+    const myObj={
+        username:"",
+        password:""
+    }
     function ValidateForm(e)
     {
        e.preventDefault();
@@ -55,6 +62,12 @@ function LoginForm()
       } else {
         // Hit the API
         setError({ usernameError: "", passwordError: "" });
+        myObj.username=userNameEntered
+        myObj.password=passwordEntered
+        
+        setArrs([...arrs,myObj])
+        
+        
         loginapi(userNameEntered, passwordEntered);
         
       }
@@ -81,11 +94,19 @@ return FormError
              
             )
             console.log(response.data)
+            
         }
         catch(err){
     console.log(err)
         }
        
+    }
+    function DeleteHandler(index)
+    {
+        const filtered = arrs.filter((eachobj, idx) => idx !== index);
+        setArrs(filtered)
+
+
     }
 
     
@@ -107,14 +128,23 @@ return FormError
   <button type="submit" className="btn btn-default">
     Submit
   </button>
-  { !error.usernameError && !error.passwordError && <table >
-    <th style={{border:"1px solid black"}}>username</th>
-    <th style={{border:"1px solid black"}}>password</th>
-   <tr style={{border:"1px solid black",height:"20px" }}>
-    <td style={{border:"1px solid black",width:"50px"}}> {usernameRef.current.value} </td>
-    <td> {passwordRef.current.value} </td>
-   </tr>
-  </table>
+ 
+    {
+        arrs.length>0 && <div>
+            {
+                arrs.map((eachperson,index)=>
+                (
+                    <div key={index}>
+                        {/* <span>{index}</span> */}
+                    <span style={{margin:"2px"}} >username is {eachperson.username}</span>
+                    <span style={{margin:"2px"}} >password is {eachperson.password}</span>
+                    <button onClick={()=>DeleteHandler(index)}>Delete</button>
+                    </div>
+                )
+               
+                )
+            }
+        </div>
     }
 </form>
     )
