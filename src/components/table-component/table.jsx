@@ -3,7 +3,7 @@
 
 
 
-function TableComponent({rowData})
+function TableComponent({rowData,head1,head2})
 {
     return(
         <>
@@ -14,9 +14,9 @@ function TableComponent({rowData})
        
           <tr>
          
-             <th>name</th>
-          <th>email</th>
-          <th>occupation</th>
+             <th>{head1}</th>
+          <th>{head2}</th>
+          {/* <th>occupation</th> */}
         
           </tr>
       
@@ -25,12 +25,12 @@ function TableComponent({rowData})
       </thead>
       <tbody>
        {
-        rowData.map(eachperson=>
+        rowData.map((eachperson,index)=>
         (
-            <tr>
+            <tr key={index}>
             <td>{eachperson.data1}</td>
             <td>{eachperson.data2}</td>
-            <td>{eachperson.data3}</td>
+            {/* <td>{eachperson.data3}</td> */}
           </tr>
         )
           
