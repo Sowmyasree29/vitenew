@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function CustomRectangleCard({updated}) {
+function CustomRectangleCard({title,img,desc}) {
   return (
     <Card style={{ width: '18rem', display: "grid", gap: "10px", gridTemplateColumns: '2fr repeat(4, 1fr)' }}>
 
@@ -9,7 +9,13 @@ function CustomRectangleCard({updated}) {
       <Card.Body>
         {/* <Card.Title></Card.Title> */}
         <Card.Text>
-          {updated}
+          {title}
+        </Card.Text>
+        <Card.Text>
+          <img src={img} height={100} width={100} alt="" />
+        </Card.Text>
+        <Card.Text>
+          {desc}
         </Card.Text>
         {/* <Button variant="primary">Go somewhere</Button> */}
       </Card.Body>

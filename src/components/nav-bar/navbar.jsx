@@ -27,6 +27,12 @@ function NavBar()
       <li style={liStyle} className="nav-item">
       <NavLink style={linkStyle} to={"/register"}>Register</NavLink>
       </li>
+      <li style={liStyle} className="nav-item">
+      <NavLink style={linkStyle} to={"/category"}>category</NavLink>
+      </li>
+      <li style={liStyle} className="nav-item">
+      <NavLink style={linkStyle} to={"/products"}>products</NavLink>
+      </li>
 
   
     </ul>

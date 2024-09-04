@@ -5,9 +5,10 @@ import NavigationRouter from "./components/navigations/navigations";
 
 function App() {
   return(
-    // <UseEffectEvent/>
-    // <TabSwitching/>
-    <NavigationRouter/>
+  <>
+  <NavigationRouter/>
+  </>
+ 
   )
 
 }
