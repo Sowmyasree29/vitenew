@@ -1,11 +1,17 @@
-import {useState} from "react"
+import {useContext, useState} from "react"
 import "./style.css"
+import { UserDetails } from "../navigations/navigations"
 
 
 
 function EvenOdd()
 {
     const[even,setEven]=useState("")
+    const {darkTheme}=useContext(UserDetails)
+    const {handler}=useContext(UserDetails)
+    const divStyle={
+        backgroundColor:darkTheme?"yellow":"red",
+    }
    
     function EvenHandler(nbr)
     {
@@ -13,7 +19,8 @@ function EvenOdd()
         {
             setEven("it is even nbr")
         }
-        else{
+        else
+        {
             setEven("it is odd nbr")
         }
     }
@@ -25,12 +32,13 @@ function EvenOdd()
     return(
         <div>
           <h2>{even}</h2>
+          <button onClick={handler}>change Theme</button>
          
                 <div className="grids">
                     {
                          arr.map(eachitem =>
                             (
-                               <div key={eachitem.key}>{eachitem}</div>
+                               <div style={divStyle} key={eachitem.key}>{eachitem}</div>
                             ))
                     }
                 

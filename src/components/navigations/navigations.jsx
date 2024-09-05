@@ -10,12 +10,37 @@ import Jwelery from "../screens/jwelery.jsx";
 import Electronics from "../screens/electronics.jsx";
 import Products from "../screens/products.jsx";
 import ProductDetails from "../screens/products-details.jsx";
+import {useState,createContext} from "react"
 
-
+export const UserDetails=createContext()
 
 function NavigationRouter()
 {
+  const[isDark,setIsDark]=useState(true)
+  const[salary,setSalary]=useState(100000)
+  function Handler()
+  {
+    setIsDark(!isDark)
+  }
+  function Increment()
+  {
+    setSalary(salary+1000)
+  }
+  
+  const[username,setUsername]=useState("iam globalstate")
     return( 
+      <UserDetails.Provider value={{
+        username:"hello user",
+        darkTheme:isDark,
+        salary:salary,
+        handler:Handler,
+        increment:Increment,
+      }
+       
+
+      }>
+
+     
         <>
        
        
@@ -36,7 +61,7 @@ function NavigationRouter()
         </Routes>
         </>
         
-      
+      </UserDetails.Provider> 
       
     )
 }

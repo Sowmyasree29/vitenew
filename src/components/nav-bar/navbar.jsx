@@ -1,10 +1,13 @@
 
 import { NavLink } from "react-router-dom";
+import { UserDetails } from "../navigations/navigations";
+import { useContext } from "react";
 
 
 
 function NavBar()
 {
+  const {darkTheme}=useContext(UserDetails)
     const linkStyle={
         textDecoration:"none",color:"blue"
     }
@@ -13,7 +16,7 @@ function NavBar()
     }
     return(
         <>
- <nav className="navbar navbar-expand-sm bg-light">
+ <nav className={`navbar navbar-expand-sm bg-${darkTheme?"dark":"light"}`}>
   <div className="container-fluid">
   
     <ul className="navbar-nav">
