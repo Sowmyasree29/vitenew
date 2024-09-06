@@ -12,6 +12,10 @@ function FormHandling()
     gender:'',
     languages:[]
 }
+
+const formStyle={
+  marginLeft:"500px",
+}
 // const[table,setTable]=useState([])
     const[formData,setFormData]=useState(
         {
@@ -93,15 +97,17 @@ return Object.keys(error).length===0
             data2:formData.email,
             data3:formData.occupation
            }
+           const existingData=JSON.parse(localStorage.getItem("user"))||[]
+           const updated=[...existingData,newFormData]
+           localStorage.setItem("user",JSON.stringify(updated))
          
-      
+          
           if (decide) {
               setArr([...arr, newFormData]); 
                // Add formData to the array only if valid
+           
                setFormData(initialform)
-              
-               
-              
+                   
           } else {
               alert("please fill the form correctly");
           }
@@ -110,7 +116,7 @@ return Object.keys(error).length===0
       
     return(
       <div>
-        <form onSubmit={onSubmitHandler} >
+        <form style={formStyle} onSubmit={onSubmitHandler} >
        
     <div className="form-group">
       <label htmlFor="username">Enter Name</label>
@@ -210,24 +216,6 @@ return Object.keys(error).length===0
 </div>
 
 <button type="submit" className="btn btn-default">Submit</button>
-{/* {
-          arr.length>0 && (
-            <div>
-            {
-              arr.map((eachitem,index)=>
-              (
-                <div key={index}>
-                <div>{eachitem.username}</div>
-                <div>{eachitem.email}</div>
-                </div>
-              )
-              )
-            }
-              </div>
-          )
-        } */}
-
-
 
     </form>
    {arr.length>0 && (<TableComponent rowData={arr} />)} 
@@ -235,7 +223,5 @@ return Object.keys(error).length===0
      
     )}
  
-
-    
 
 export default FormHandling;

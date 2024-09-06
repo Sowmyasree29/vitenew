@@ -30,6 +30,7 @@ function TableComponent({rowData,head1,head2})
             <tr key={index}>
             <td>{eachperson.data1}</td>
             <td>{eachperson.data2}</td>
+          
             {/* <td>{eachperson.data3}</td> */}
           </tr>
         )

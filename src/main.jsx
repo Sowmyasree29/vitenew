@@ -8,9 +8,9 @@ import NavigationRouter from './components/navigations/navigations.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <NavigationRouter/>
-    </BrowserRouter>
-    {/* <App /> */}
+    </BrowserRouter> */}
+    <App />
   </StrictMode>,
 )
