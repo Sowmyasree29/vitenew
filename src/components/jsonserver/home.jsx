@@ -22,7 +22,7 @@ function Home()
    async function fetchData()
    {
     try{
-        const apiData=await axios.get("http://localhost:3001/users")
+        const apiData=await axios.get("http://localhost:3002/users")
         console.log(apiData)
         const response=apiData.data
         console.log(response)
@@ -51,7 +51,7 @@ function submitHandler(e)
     async function addedData()
     {
         try{
-            const addData=await axios.post("http://localhost:3001/users",formData)
+            const addData=await axios.post("http://localhost:3002/users",formData)
             const response1=addData.data
             console.log(addData,"addeddata")
             console.log(response1,"response")
@@ -75,7 +75,7 @@ function deleteHandler(id)
    async function deleted()
    {
     try{
-         const deleting=await axios.delete(`http://localhost:3001/users/`+id)
+         const deleting=await axios.delete(`http://localhost:3002/users/`+id)
          const response2=deleting.data
          location.reload();
 

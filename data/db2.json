@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "sowmya",
+      "todo": "need to complete the assigned task",
+      "completed": "yes"
+    }
+  ]
+}
