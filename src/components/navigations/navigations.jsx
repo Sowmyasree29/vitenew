@@ -1,4 +1,4 @@
-import {Routes,Route} from "react-router-dom"
+import {Routes,Route, BrowserRouter} from "react-router-dom"
 import NavBar from "../nav-bar/navbar";
 import Register from "../screens/aboutScreen";
 import Login from "../screens/homeScreen";
@@ -10,12 +10,18 @@ import Jwelery from "../screens/jwelery.jsx";
 import Electronics from "../screens/electronics.jsx";
 import Products from "../screens/products.jsx";
 import ProductDetails from "../screens/products-details.jsx";
-import {useState,createContext} from "react"
+import {useState,createContext,useReducer} from "react"
+
+import { initialState,ReducerFunction } from "./useReducer.js";
+
 
 export const UserDetails=createContext()
+export const GlobalContext=createContext()
 
 function NavigationRouter()
 {
+  
+
   const[isDark,setIsDark]=useState(true)
   const[salary,setSalary]=useState(100000)
   function Handler()
@@ -26,9 +32,16 @@ function NavigationRouter()
   {
     setSalary(salary+1000)
   }
+const[current,dispatch]=useReducer(ReducerFunction,initialState)
+console.log(current)
+
   
   const[username,setUsername]=useState("iam globalstate")
     return( 
+      <GlobalContext.Provider value={
+        {current:current,dispatch:dispatch}
+
+      }>
       <UserDetails.Provider value={{
         username:"hello user",
         darkTheme:isDark,
@@ -42,7 +55,7 @@ function NavigationRouter()
 
      
         <>
-       
+       <BrowserRouter>
        
           <Routes>
           <Route path="/" element={<Navigate to="/register" />}/>
@@ -59,9 +72,11 @@ function NavigationRouter()
           <Route path="products/:productId" element={<ProductDetails/>}/>
 
         </Routes>
+        </BrowserRouter>
         </>
         
       </UserDetails.Provider> 
+      </GlobalContext.Provider>
       
     )
 }
