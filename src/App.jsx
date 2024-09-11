@@ -1,8 +1,13 @@
 import CartItems from "./components/memorization/cart-Items";
 import TransactionsData from "./components/memorization/transactionsData";
 import UseMemo from "./components/memorization/useMemo";
-import NavigationRouter from "./RecipeApp/navigation";
+
 import Price from "./components/memorization/pricecart";
+import Countries from "./dropdown/countries";
+import UseCallback from "./components/useCallback/useCallback";
+import NavigationRouter from "./components/navigations/navigations";
+import Counter from "./components/Customhooks/countercustomhook";
+import LocalStorage from "./components/Customhooks/CustomStorage";
 
 
 
@@ -10,9 +15,8 @@ import Price from "./components/memorization/pricecart";
 function App() {
   return(
   <>
-<Price/>
-<TransactionsData/>
-<CartItems/>
+  <Counter/>
+<LocalStorage/>
 
   </>
  
@@ -22,4 +26,5 @@ function App() {
 
   
 export default App;
+
 
