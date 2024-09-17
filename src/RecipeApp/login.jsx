@@ -1,6 +1,10 @@
 
 import {useState} from "react"
 import axios from "axios"
+import { useDispatch, useSelector } from "react-redux"
+import { BOOKTICKETS } from "../redux/tickets/actiontypes"
+import { actions } from "../redux/tickets/action"
+import { cancel } from "../redux/tickets/action"
 
 function Login()
 {
@@ -8,6 +12,10 @@ function Login()
     username:"",
     password:'',
    })
+   const reduxStoreData=useSelector(state=>state)
+   const dispatch=useDispatch()
+   console.log(reduxStoreData)
+
    const[arr,setArr]=useState([])
    const divStyle={
     display:"flex",
@@ -17,7 +25,7 @@ function Login()
     justifyContent:"center",
     alignItems:"center",
     border:"1px solid black",
-    height:"400px",
+    height:"500px",
     width:"400px"
    }
 
@@ -102,6 +110,11 @@ function Login()
     Submit
   </button>
 </form>
+<button onClick={()=>dispatch(actions(1))}>Book ticket</button>
+<button onClick={()=>dispatch(cancel())}>cancel ticket</button>
+<h2>Booked Tickets are:{reduxStoreData.BookedTickets}</h2>
+<h2>Cancel Tickets are:{reduxStoreData.cancelTickets}</h2>
+
 {/* {
     arr.length>0 && (
         <div>

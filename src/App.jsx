@@ -1,13 +1,9 @@
-import CartItems from "./components/memorization/cart-Items";
-import TransactionsData from "./components/memorization/transactionsData";
-import UseMemo from "./components/memorization/useMemo";
 
-import Price from "./components/memorization/pricecart";
-import Countries from "./dropdown/countries";
-import UseCallback from "./components/useCallback/useCallback";
-import NavigationRouter from "./components/navigations/navigations";
-import Counter from "./components/Customhooks/countercustomhook";
-import LocalStorage from "./components/Customhooks/CustomStorage";
+import GuessNumber from "./components/GuessNumber/GuessNumber";
+import Navigation from "./components/CRUD/navigation";
+import Todos from "./components/CRUD/todos";
+import NavigationRouter from "./RecipeApp/navigation";
+
 
 
 
@@ -15,8 +11,7 @@ import LocalStorage from "./components/Customhooks/CustomStorage";
 function App() {
   return(
   <>
-  <Counter/>
-<LocalStorage/>
+<NavigationRouter/>
 
   </>
  

@@ -3,6 +3,10 @@
 
 function Register()
 {
+    function submitHandler(e)
+    {
+        e.preventDefault();
+    }
     return(
         <div>
             <h2>this is register page</h2>

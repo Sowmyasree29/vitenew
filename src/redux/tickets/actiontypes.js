@@ -1,0 +1,5 @@
+
+
+export const BOOKTICKETS="BOOK_TICKETS";
+export const CANCELTICKETS="CANCEL_TICKETS";
+export const HOLDTICKETS="HOLD_TICKETS";
