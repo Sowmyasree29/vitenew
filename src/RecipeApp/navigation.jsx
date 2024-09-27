@@ -3,6 +3,7 @@ import Login from "./login";
 import Register from "./register";
 import { createContext,useState } from "react";
 import ProductList from "./productslist";
+import AddToCart from "./AddToCart";
 
 
 export const GlobalContext=createContext()
@@ -26,6 +27,7 @@ function NavigationRouter()
             <Route path="/" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/product" element={<ProductList/>}/>
+            <Route path="/addtocart" element={<AddToCart/>}/>
 
         </Routes>
         </BrowserRouter>
