@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from "react";
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../../store/slice/todoReducer.jsx';  // Correct the path based on the actual location
+import { addTodo } from '../../store/slice/todoReducer.jsx';  
 
 
 

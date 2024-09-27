@@ -28,6 +28,13 @@ function Todos()
         
         
     }
+    function handleInput(ind)
+    {
+        setSelected(ind)
+        const value=arr[ind]
+        setInput(value)
+        
+    }
     function updatedItem(e)
     {
         e.preventDefault()
@@ -42,13 +49,7 @@ function Todos()
         
         
     }
-    function handleInput(ind)
-    {
-        setSelected(ind)
-        const value=arr[ind]
-        setInput(value)
-        
-    }
+ 
     return(
         <>
         <form onSubmit={selected !== null ?updatedItem :submitHandler}>

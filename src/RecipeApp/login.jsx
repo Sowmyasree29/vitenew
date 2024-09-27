@@ -2,9 +2,12 @@
 import {useState} from "react"
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
-import { BOOKTICKETS } from "../redux/tickets/actiontypes"
+
 import { actions } from "../redux/tickets/action"
 import { cancel } from "../redux/tickets/action"
+import { changeusername } from "../redux/profile/action"
+import { increment } from "../redux/profile/action"
+
 
 function Login()
 {
@@ -12,9 +15,11 @@ function Login()
     username:"",
     password:'',
    })
-   const reduxStoreData=useSelector(state=>state)
+   const profileData=useSelector(state=>state.profile)
+   const ticketData=useSelector(state=>state.ticket)
    const dispatch=useDispatch()
-   console.log(reduxStoreData)
+   console.log(profileData)
+   console.log(ticketData)
 
    const[arr,setArr]=useState([])
    const divStyle={
@@ -112,8 +117,12 @@ function Login()
 </form>
 <button onClick={()=>dispatch(actions(1))}>Book ticket</button>
 <button onClick={()=>dispatch(cancel())}>cancel ticket</button>
-<h2>Booked Tickets are:{reduxStoreData.BookedTickets}</h2>
-<h2>Cancel Tickets are:{reduxStoreData.cancelTickets}</h2>
+<button onClick={()=>dispatch(changeusername("sree"))}>change username</button>
+<button onClick={()=>dispatch(increment(200))}>increment salary</button>
+<div>changed username:{profileData.name}</div>
+<div>increment salary:{profileData.salary}</div>
+{/* <h2>Booked Tickets are:{reduxStoreData.BookedTickets}</h2>
+<h2>Cancel Tickets are:{reduxStoreData.cancelTickets}</h2> */}
 
 {/* {
     arr.length>0 && (

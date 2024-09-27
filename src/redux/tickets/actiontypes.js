@@ -1,5 +1,14 @@
 
-
+//tickets
 export const BOOKTICKETS="BOOK_TICKETS";
 export const CANCELTICKETS="CANCEL_TICKETS";
 export const HOLDTICKETS="HOLD_TICKETS";
+
+//profile 
+export const CHANGE_USERNAME="CHANGE_USERNAME";
+export const INCREMENT_SALARY="INCREMENT_SALARY";
+
+//products data
+export const FETCH_DATA_SUCCESS="FETCH_DATA_SUCCESS";
+export const FETCH_DATA_FAILURE="FETCH_DATA_FAILURE";
+export const FETCH_DATA_REQUESTS="FETCH_DATA_REQUESTS";
